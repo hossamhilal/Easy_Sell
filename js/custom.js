@@ -147,6 +147,18 @@
         }
     });
 
+    $('.playVideo').on('click', function(e){
+        $('#videoModal').modal();
+    });
+
+    let url = $("#video").attr('src');
+    $("#videoModal").on('hide.bs.modal', function() {
+        $("#video").attr('src', '');
+    });
+    $("#videoModal").on('show.bs.modal', function() {
+        $("#video").attr('src', url);
+    });
+
 
 
 })(jQuery);
